@@ -23,7 +23,7 @@ public class TeamController {
 	public Team getTeam(@PathVariable String teamName) {
 		Team team = this.teamRepository.findByTeamName(teamName);
 		team.setMatches(this.matchRepository.findLatestMatchesByTeam(teamName,4));
-		return team;
+		return team; 
 	}
 	
 }
