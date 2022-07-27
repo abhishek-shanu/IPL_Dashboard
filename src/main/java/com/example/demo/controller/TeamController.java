@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,6 +10,7 @@ import com.example.demo.repository.MatchRepository;
 import com.example.demo.repository.TeamRepository;
 
 @RestController
+@CrossOrigin
 public class TeamController {
 	
 	private TeamRepository teamRepository;
@@ -25,5 +27,4 @@ public class TeamController {
 		team.setMatches(this.matchRepository.findLatestMatchesByTeam(teamName,4));
 		return team; 
 	}
-	
 }
